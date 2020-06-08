@@ -18,4 +18,7 @@ Route::get('/', 'HomeController@index');
 
 Route::get('admin/posts', 'Admin\PostsController@index');
 Route::get('admin/posts/create', 'Admin\PostsController@create');
-Route::post('admin/posts', 'Admin\PostsController@store');
+Route::get('admin/posts/{post}/edit', 'Admin\PostsController@edit');
+
+Route::post('admin/posts', 'Admin\PostsController@store')->name('posts.store');
+//Route::post('admin/posts', 'Admin\PostsController@update')->name('posts.update');

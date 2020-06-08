@@ -36,7 +36,22 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'title' => 'required|max:255',
+            'slug' => 'required',
+            'hat' => 'required',
+            'body' => 'required'
+        ]);
+        $post = new Post();
+
+        $post->title = request('title');
+        $post->slug = request('slug');
+        $post->hat = request('hat');
+        $post->body = request('body');
+
+        $post->save();
+
+        return redirect('/admin/posts');
     }
 
     /**
@@ -58,7 +73,9 @@ class PostsController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        $post = Post::find($post);
+
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -70,7 +87,12 @@ class PostsController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        request()->validate([
+            'title' => 'required|max:255',
+            'slug' => 'required',
+            'hat' => 'required',
+            'body' => 'required'
+        ]);
     }
 
     /**
