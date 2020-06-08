@@ -1,0 +1,38 @@
+@import 'node_modules/bulma/sass/utilities/initial-variables';
+@import 'node_modules/bulma/sass/utilities/functions';
+
+$primary: #2d862d;
+$turquoise : #00e6ac;
+$vert : #2d862d;
+$orange: #ffc34d;
+$bleu: #4db8ff;
+$box-radius: 4px;
+$footer-background-color: #f8f9fb;
+
+$navbar-background-color: $primary;
+$navbar-item-color: white;
+$navbar-height : 3.25rem;
+
+$landing-height : calc(100vh - #{$navbar-height});
+$landing-height-o : -o-calc(100vh - #{$navbar-height});
+$landing-height-webkit : -webkit-calc(100vh - #{$navbar-height});
+$landing-height-moz : -moz-calc(100vh - #{$navbar-height});
+
+
+
+.landing-titles {
+    padding: 1rem 0;
+}
+.landing-buttons {
+    padding: 1rem 0;
+}
+
+.valeurs-section {
+    h3 {
+        background-color: $primary;
+        padding: 1rem;
+    }
+}
+@import 'resources/sass/_homepage.scss';
+@import 'resources/sass/_responsive.scss';
+@import 'node_modules/bulma/bulma'
